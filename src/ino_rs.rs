@@ -1,12 +1,12 @@
-pub fn on(pin: u16) {
+pub fn on(pin: u64) {
     println!("  digitalWrite({}, HIGH);", pin);
 }
 
-pub fn off(pin: u16) {
+pub fn off(pin: u64) {
     println!("  digitalWrite({}, LOW);", pin);
 }
 
-pub fn def_pin(pin: u16, is_input: bool) {
+pub fn def_pin(pin: String, is_input: bool) {
     if is_input {
         println!("  pinMode({}, INPUT);", pin);
     } else {
@@ -30,7 +30,7 @@ pub fn halt(seconds: f64) {
     println!("  delay({});", seconds * 1000.0);
 }
 
-pub fn analog_info(pin: u64) {
+pub fn analog_info(pin: String) {
     println!("  analogRead({});", pin);
 }
 
@@ -54,7 +54,7 @@ pub fn serial_println(printing: String) {
     println!("  Serial.println(\"{}\");", printing);
 }
 
-pub fn serial_analog(pin: u64) {
+pub fn serial_analog(pin: String) {
     println!("  Serial.print( analogRead({}) );", pin)
 }
 
